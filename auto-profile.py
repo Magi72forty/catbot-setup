@@ -5,7 +5,6 @@
 # You do not have to "set up" a steam profile on each account for this to work, evidently.
 # Simply copy your accounts.txt and bot-profile.jpg here and run: ./auto-profile.py
 # Image format can be PNG, this script just expects the filename to be .jpg
-# credits to rosne-gamingyt for fixing the script
 
 # Make sure you install dependencies first:
 # pip3 install -U steam[client]
@@ -23,7 +22,7 @@ accounts = data.split('\n')
 accounts = [account for account in accounts if account.strip()]  # we don't want empty strings.
 
 profile = open('bot-profile.jpg', 'rb')
-nickname = 'youtube.com/@RosneGaming'
+nickname = 'cat-bot'
 
 enable_debugging = False
 enable_extra_info = False
