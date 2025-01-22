@@ -6,10 +6,25 @@ if [ $EUID == 0 ]; then
     exit
 fi
 
-# Check and clone cathook if not exists
+# Check and clone required repositories if they don't exist
 if [ ! -d "./cathook" ]; then
     echo "Cloning cathook repository..."
     git clone --recursive https://github.com/MistakesMultiplied/cathook
+fi
+
+if [ ! -d "./catbot-ipc-web-panel" ]; then
+    echo "Cloning catbot-ipc-web-panel repository..."
+    git clone --recursive https://github.com/MistakesMultiplied/catbot-ipc-web-panel
+fi
+
+if [ ! -d "./catbot-ipc-server" ]; then
+    echo "Cloning catbot-ipc-server repository..."
+    git clone --recursive https://github.com/MistakesMultiplied/catbot-ipc-server
+fi
+
+if [ ! -d "./just-disable-vac" ]; then
+    echo "Cloning just-disable-vac repository..."
+    git clone --recursive https://github.com/MistakesMultiplied/just-disable-vac
 fi
 
 # Check for required packages based on distribution
