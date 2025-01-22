@@ -6,6 +6,40 @@ if [ $EUID == 0 ]; then
     exit
 fi
 
+# Check and clone cathook if not exists
+if [ ! -d "./cathook" ]; then
+    echo "Cloning cathook repository..."
+    git clone --recursive https://github.com/MistakesMultiplied/cathook
+fi
+
+# Check for required packages based on distribution
+if [ -f /etc/debian_version ]; then
+    echo "Detected Debian/Ubuntu based system"
+    sudo apt-get install nodejs firejail net-tools x11-xserver-utils npm
+elif [ -f /etc/fedora-release ] || [ -f /etc/redhat-release ]; then
+    echo "Detected Fedora/CentOS based system"
+    sudo dnf install nodejs firejail net-tools xorg-x11-server-utils
+elif [ -f /etc/arch-release ] || [ -f /etc/manjaro-release ] || [ -f /etc/garuda-release ]; then
+    echo "Detected Arch/Manjaro/Garuda based system"
+    sudo pacman -Syu nodejs npm firejail net-tools xorg-xhost xorg-server-xvfb
+elif [ -f /etc/gentoo-release ]; then
+    echo "Detected Gentoo based system"
+    sudo emerge -av nodejs npm firejail net-tools xorg-server
+elif [ -f /etc/SuSE-release ] || [ -f /etc/opensuse-release ]; then
+    echo "Detected OpenSUSE based system"
+    sudo zypper install nodejs npm firejail net-tools xorg-x11-server
+elif [ -f /etc/void-release ]; then
+    echo "Detected Void Linux"
+    sudo xbps-install -Sy nodejs npm firejail net-tools xorg-server
+elif [ -f /etc/alpine-release ]; then
+    echo "Detected Alpine Linux"
+    sudo apk add nodejs npm firejail net-tools xorg-server
+else
+    echo "Your Linux distribution is not directly supported"
+    echo "Please manually install: nodejs, npm, firejail, net-tools, and X11 utilities"
+    read -p "Press Enter to continue or Ctrl+C to cancel..."
+fi
+
 if ! [ -e "/opt/cathook/" ]; then
     echo
     echo "Please install cathook on your main TF2, first."
