@@ -7,3 +7,6 @@ Next you will have to edit the text document called accounts.txt in your catbot-
 USERNAME:PASSWORD
 USERNAME:PASSWORD
 USERNAME:PASSWORD
+
+# Powerfull tool for DEVELOPERS
+simply, if youre not smart enough (no experience with linux etc.) dont even try.
