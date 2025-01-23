@@ -9,4 +9,4 @@ USERNAME:PASSWORD
 USERNAME:PASSWORD
 
 # Powerfull tool for DEVELOPERS
-simply, if youre not smart enough (no experience with linux etc.) dont even try.
+simply, if youre not smart enough (no experience with linux etc). dont even try.
