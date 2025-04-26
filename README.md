@@ -8,5 +8,7 @@ USERNAME:PASSWORD
 USERNAME:PASSWORD
 USERNAME:PASSWORD
 
-# Powerfull tool for DEVELOPERS
-simply, if youre not smart enough (no experience with linux etc). dont even try.
+
+# ARCHIVAL
+
+Cathook doesn't work anymore as of FEB 18, use a 32 bit beta with ficool2's item schema blocker so hl2 doesn't crash
