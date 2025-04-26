@@ -22,11 +22,6 @@ if [ ! -d "./catbot-ipc-server" ]; then
     git clone --recursive https://github.com/MistakesMultiplied/catbot-ipc-server
 fi
 
-if [ ! -d "./just-disable-vac" ]; then
-    echo "Cloning just-disable-vac repository..."
-    git clone --recursive https://github.com/MistakesMultiplied/just-disable-vac
-fi
-
 # Check for required packages based on distribution
 if [ -f /etc/debian_version ]; then
     echo "Detected Debian/Ubuntu based system"
