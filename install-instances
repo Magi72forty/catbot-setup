@@ -5,7 +5,7 @@ mkdir -p user_instances
 
 # Download the b0 archive
 echo "Downloading B0 archive..."
-wget "https://drive.usercontent.google.com/download?id=1n9uqm3qUonvcx_rhBAlbYQG2ydHBdn1r&export=download&confirm=yes" -O /tmp/b0.tar.gz
+wget "https://download1589.mediafire.com/3jxx1aewkgngId4HdMngCKqHzMr39dOEpGddcOFqmiQNL4R50D7N1HA8vt6FXrRos6QIg4TBl53VAA5j-jXJrbzR1N3hq0q5hnbvNyceOJxvjhuFxxMqIZfUG1gbZicedd8zmvEEmRq1nG7vBpWd-lv9sSIZokwhBtME4v7NfmdHo8I/52mw2hkbcmfpe83/b0.tar.gz" -O /tmp/b0.tar.gz
 
 # Check if download was successful
 if [ $? -ne 0 ]; then
